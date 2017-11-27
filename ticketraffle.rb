@@ -8,7 +8,7 @@ end
 
 def ticket_search(winner, my_ticket)
 	my_ticket = my_ticket.to_s
-	results = []
+	result = []
 counter = 0 
 	winner.each do |raffle|
 		counter = 0 
@@ -28,15 +28,22 @@ counter = 0
 				counter += 1
 		end
 		if counter == 4
-			results.push("Winner!")
+			result.push("Winner!")
 		elsif counter == 3
-			results.push("So Close!")
+			result.push("So Close!")
 		else
-			results.push("Loser!")
+			result.push("Loser!")
 		end
 	end
-
-		
+	if result.include?("Winner!") == true
+		"Winner!"
+	elsif result.include?("So Close!") == true
+		"So Close!"
+	else
+		"Loser!"
+	end
+			
+			
 
 
 		# if raffle = my_ticket
